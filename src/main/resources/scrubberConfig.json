@@ -1,0 +1,126 @@
+{
+	"context_path": "/scrubber/api",
+	"http_server_port": 8080,
+	"http_server_host": "localhost",
+	"verticle_package_name": "com.api.scrubber.verticle",
+	"reflection_package_name": "com.api.scrubber.handler",
+	"http2Enabled": false,
+	"dev": {
+		"httpServerVerticle": {
+			"ha": false,
+			"instances": 2,
+			"maxWorkerExecuteTime": 60000000000,
+			"multiThreaded": false,
+			"worker": false,
+			"workerPoolSize": 200
+		},
+		"http_server_options": {
+			"acceptUnmaskedFrames": false,
+			"alpnVersions": [
+				"HTTP_2",
+				"HTTP_1_1"
+			],
+			"compressionLevel": 6,
+			"compressionSupported": false,
+			"decompressionSupported": false,
+			"handle100ContinueAutomatically": false,
+			"http2ConnectionWindowSize": -1,
+			"initialSettings": {
+				"headerTableSize": 4096,
+				"initialWindowSize": 65535,
+				"maxConcurrentStreams": 100,
+				"maxFrameSize": 16384,
+				"maxHeaderListSize": 2147483647,
+				"pushEnabled": true
+			},
+			"maxChunkSize": 8192,
+			"maxHeaderSize": 8192,
+			"maxInitialLineLength": 4096,
+			"maxWebsocketFrameSize": 65536,
+			"maxWebsocketMessageSize": 262144
+		},
+		"databaseVerticle": {
+			"ha": false,
+			"instances": 1,
+			"maxWorkerExecuteTime": 60000000000,
+			"multiThreaded": true,
+			"worker": true,
+			"workerPoolSize": 200
+		},
+		"requestVerticle": {
+			"ha": false,
+			"instances": 1,
+			"maxWorkerExecuteTime": 60000000000,
+			"multiThreaded": true,
+			"worker": true,
+			"workerPoolSize": 200
+		},
+		"vertx_options": {
+			"logMetrics": true,
+			"addressResolverOptions": {
+				"cacheMaxTimeToLive": 2147483647,
+				"cacheMinTimeToLive": 0,
+				"cacheNegativeTimeToLive": 0,
+				"maxQueries": 4,
+				"ndots": 1,
+				"optResourceEnabled": true,
+				"queryTimeout": 5000,
+				"rdFlag": true,
+				"rotateServers": false
+			},
+			"blockedThreadCheckInterval": 1000,
+			"clusterHost": "localhost",
+			"clusterPingInterval": 20000,
+			"clusterPingReplyInterval": 20000,
+			"clusterPort": 0,
+			"clusterPublicPort": 1,
+			"clustered": false,
+			"eventBusOptions": {
+				"acceptBacklog": -1,
+				"clientAuth": "NONE",
+				"clusterPingInterval": 20000,
+				"clusterPingReplyInterval": 20000,
+				"clusterPublicPort": 1,
+				"clustered": false,
+				"connectTimeout": 60000,
+				"crlPaths": [],
+				"crlValues": [],
+				"enabledCipherSuites": [],
+				"enabledSecureTransportProtocols": [],
+				"host": "localhost",
+				"idleTimeout": 0,
+				"logActivity": false,
+				"port": 0,
+				"receiveBufferSize": -1,
+				"reconnectAttempts": 0,
+				"reconnectInterval": 1000,
+				"reuseAddress": true,
+				"sendBufferSize": -1,
+				"soLinger": -1,
+				"ssl": false,
+				"tcpKeepAlive": false,
+				"tcpNoDelay": true,
+				"trafficClass": -1,
+				"trustAll": true,
+				"useAlpn": false,
+				"usePooledBuffers": false
+			},
+			"eventLoopPoolSize": 16,
+			"haEnabled": false,
+			"haGroup": "__DEFAULT__",
+			"internalBlockingPoolSize": 20,
+			"maxEventLoopExecuteTime": 2000000000,
+			"maxWorkerExecuteTime": 60000000000,
+			"metricsOptions": {
+				
+			},
+			"quorumSize": 1,
+			"warningExceptionTime": 5000000000,
+			"workerPoolSize": 20
+		},
+		"mongoConfig": {
+			"db_name": "scrubber",
+			"connection_string": "mongodb://127.0.0.1:27017/?serverselectiontimeoutms=10000;serverselectiontimeoutms=10000"
+		}
+	}
+}

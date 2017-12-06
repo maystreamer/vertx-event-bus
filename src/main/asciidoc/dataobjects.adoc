@@ -1,0 +1,17 @@
+= Cheatsheets
+
+[[APIRequest]]
+== APIRequest
+
+
+[cols=">25%,^25%,50%"]
+[frame="topbot"]
+|===
+^|Name | Type ^| Description
+|[[body]]`body`|`Json object`|-
+|[[headers]]`headers`|`String`|-
+|[[httpMethod]]`httpMethod`|`String`|-
+|[[id]]`id`|`String`|-
+|[[url]]`url`|`String`|-
+|===
+

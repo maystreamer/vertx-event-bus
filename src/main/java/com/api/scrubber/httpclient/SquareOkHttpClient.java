@@ -12,6 +12,7 @@ import com.api.scrubber.helper.MediaType;
 import com.api.scrubber.model.APIRequest;
 
 import io.vertx.core.json.JsonObject;
+import okhttp3.ConnectionPool;
 import okhttp3.Headers;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
@@ -21,12 +22,12 @@ import okhttp3.Response;
 import okhttp3.ResponseBody;
 
 public class SquareOkHttpClient extends AbstractHttpClient {
-	private final OkHttpClient client;
+	private static final ConnectionPool pool = new ConnectionPool(50, 120, TimeUnit.SECONDS);
+	private static final OkHttpClient client = new OkHttpClient.Builder().connectTimeout(10, TimeUnit.SECONDS)
+			.writeTimeout(10, TimeUnit.SECONDS).readTimeout(30, TimeUnit.SECONDS).connectionPool(pool).build();
 
 	public SquareOkHttpClient(APIRequest apiRequest) throws MalformedURLException {
 		super(apiRequest);
-		this.client = new OkHttpClient.Builder().connectTimeout(10, TimeUnit.SECONDS).writeTimeout(10, TimeUnit.SECONDS)
-				.readTimeout(30, TimeUnit.SECONDS).build();
 	}
 
 	@Override

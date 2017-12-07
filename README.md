@@ -1,4 +1,4 @@
-# Scrubber
+# Scrubber - vertx-event-bus
 
 Sample application built in Vertx Reactivex, Event Bus, Ok HttpClient and Mongo to test the APIs on the fly. Future releases will have mongo support and health check of the apis.
 
@@ -28,8 +28,8 @@ For running the app, (IDE used here is Eclipse)
 - Open **scrubberConfig.json** file and set the "http_server_port" as per your choice. No need to change other values.
 - Once, changes are done in **scrubberConfig.json**, right click on the project("scrubber"), <br />select "Run As" -> "Run Configurations". Set:
   * **Main**: com.api.scrubber.launcher.ScrubberLauncher
-  * **Program arguments**: <br />run com.api.scrubber.verticle.MainVerticle -conf ../scrubber/src/main/resources/scrubberConfig.json
-  * **VM arguments**: -Dlogback.configurationFile=file:../scrubber/src/main/resources/logback.xml <br />
+  * **Program arguments**: <br />run com.api.scrubber.verticle.MainVerticle -conf ../vertx-event-bus/src/main/resources/scrubberConfig.json
+  * **VM arguments**: -Dlogback.configurationFile=file:../vertx-event-bus/src/main/resources/logback.xml <br />
 After setting the variables, click "Run".
 - If app starts successfully, goto **http://localhost:8080/scrubber/api/ping/do**. Status json {"code":200,"message":"success","hasError":false,"data":{"status":"OK"}} will be served as response.
 - To call the request handler, do <br />
